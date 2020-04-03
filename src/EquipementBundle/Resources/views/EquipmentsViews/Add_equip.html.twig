@@ -26,12 +26,21 @@
     </h1>
   {{ form_start(form) }}<br><br>
     <div>
-        <div class="col-sm-4" style="margin-left: 420px">
-            {{form_widget(form.equipmentname)}}
-         <br><br>
-        </div>
-        <div class="col-sm-4" style="margin-left: 420px">
+
+
+            <div class="form-group" style="margin-left: 40px">
+                <label class="col-sm-4  control-label">Nom Equipement</label>
+                <div class="col-sm-4">
+                    {{form_widget(form.equipmentname)}}
+                </div>
+            </div>
+        <br><br><br>
+        <div class="form-group" style="margin-left: 40px">
+
+            <label class="col-sm-4  control-label">Matiéres Premiéres</label>
+            <div class="col-sm-4">
             {{form_widget(form.rawmaterial)}}<br><br>
+        </div>
         </div>
          <div class="col-sm-12" >
 

@@ -1,0 +1,14 @@
+faqs_homepage:
+    path:     /
+    defaults: { _controller: FaqsBundle:Default:index }
+
+front_page:
+    path:     /front
+    defaults: { _controller: FaqsBundle:Default:index }
+faqs_page:
+    path:     /faqs
+    defaults: { _controller: FaqsBundle:Faqs:index}
+
+about_page:
+    path:     /about
+    defaults: { _controller: FaqsBundle:Faqs:about}

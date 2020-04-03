@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+        <title>DEBOO</title>
+    {% block head %}
+        <link rel="manifest" href="#">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/img/favicon.ico') }}">
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{{ asset('front/assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/slicknav.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
+
+    {% endblock %}
+</head>
+
+<body>
+{% block body %}
+
+        <!-- Preloader Start -->
+        <div id="preloader-active">
+                <div class="preloader d-flex align-items-center justify-content-center">
+                        <div class="preloader-inner position-relative">
+                                <div class="preloader-circle"></div>
+                                <div class="preloader-img pere-text">
+                                        <img src="{{ asset('front/assets/img/logo/90444111_1095930614125350_4943213800976285696_n.png') }}" alt="">
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <!-- Preloader Start -->
+
+        <header>
+                <!-- Header Start -->
+                <div class="header-area header-transparrent ">
+                        <div class="main-header header-sticky">
+                                <div class="container">
+                                        <div class="row align-items-center">
+                                                <!-- Logo -->
+                                                <div class="col-xl-2 col-lg-2 col-md-2">
+                                                        <div class="logo">
+                                                                <a href="#"><img src="{{ asset('front/assets/img/logo/90444111_1095930614125350_4943213800976285696_n.png') }}" alt=""></a>
+                                                        </div>
+                                                </div>
+                                                <div class="col-xl-10 col-lg-10 col-md-10">
+                                                        <!-- Main-menu -->
+                                                        <div class="main-menu f-right d-none d-lg-block">
+                                                                <nav>
+                                                                        <ul id="navigation">
+                                                                                <li class="active"><a href="#"> Home</a></li>
+                                                                                <li><a href="{{ path('faqs_page') }}">FAQs</a></li>
+                                                                                <li><a href="{{ path('about_page') }}">About</a></li>
+                                                                                <li><a href="{{ path('fos_user_security_login') }}">Logout</a></li>
+                                                                        </ul>
+                                                                </nav>
+                                                        </div>
+                                                </div>
+                                                <!-- Mobile Menu -->
+                                                <div class="col-12">
+                                                        <div class="mobile_menu d-block d-lg-none"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- Header End -->
+        </header>
+
+
+
+
+
+
+
+
+    {% block content %}
+
+
+
+    {% endblock %}
+
+
+
+
+    {% block footer %}
+       <footer>
+            <div class="footer-main">
+                    <div class="footer-area footer-padding">
+                            <div class="container">
+                                    <div class="row  justify-content-between">
+                                            <div class="col-lg-3 col-md-4 col-sm-8">
+                                                    <div class="single-footer-caption mb-30">
+                                                            <!-- logo -->
+                                                            <div class="footer-logo">
+                                                                    <a href="#"><img src="{{asset('front/assets/img/logo/90444111_1095930614125350_4943213800976285696_n.png')}}" alt=""></a>
+                                                            </div>
+                                                            <div class="footer-tittle">
+                                                                    <div class="footer-pera">
+                                                                            <p class="info1">YOUR SMART CONTAINER</p>
+                                                                    </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-5">
+                                                    <div class="single-footer-caption mb-50">
+                                                            <div class="footer-tittle">
+                                                                    <h4>Quick Links</h4>
+                                                                    <ul>
+                                                                            <li><a href="#">About</a></li>
+                                                                            <li><a href="#">FAQ</a></li>
+                                                                    </ul>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-7">
+                                                    <div class="single-footer-caption mb-50">
+                                                            <div class="footer-tittle">
+                                                                    <h4>Support</h4>
+                                                                    <ul>
+                                                                            <li><a href="#">FAQs</a></li>
+                                                                    </ul>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <!-- Copy-Right -->
+                                    <div class="row align-items-center">
+                                            <div class="col-xl-12 ">
+                                                    <div class="footer-copy-right" >
+                                                            <p class="centered"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script><i class="ti-heart" aria-hidden="true"></i> by DEBOO
+                                                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                                    </div>
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+            <!-- Footer End-->
+        </footer>
+
+
+    {% endblock %}
+
+    {% block javascripts %}
+        <script src="{{ asset('front/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+
+        <!-- Jquery, Popper, Bootstrap -->
+        <script src="{{ asset('front/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('front/assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('front/assets/js/bootstrap.min.js') }}"></script>
+        <!-- Jquery Mobile Menu -->
+        <script src="{{ asset('front/assets/js/jquery.slicknav.min.js') }}"></script>
+
+        <!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{{ asset('front/assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('front/assets/js/slick.min.js') }}"></script>
+        <!-- Date Picker -->
+        <script src="{{ asset('front/assets/js/gijgo.min.js') }}"></script>
+        <!-- One Page, Animated-HeadLin -->
+        <script src="{{ asset('front/assets/js/wow.min.js') }}"></script>
+        <script src="{{ asset('front/assets/js/animated.headline.js') }}"></script>
+        <script src="{{asset('front/assets/js/jquery.magnific-popup.js')}}"></script>
+
+        <!-- Scrollup, nice-select, sticky -->
+        <script src="{{asset('front/assets/js/jquery.scrollUp.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.nice-select.min.js')}}"></script>
+        <script src="{{ asset('front/assets/js/jquery.sticky.js') }}"></script>
+
+        <!-- contact js -->
+        <script src="{{asset('front/assets/js/contact.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.form.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/mail-script.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.ajaxchimp.min.js')}}"></script>
+
+        <!-- Jquery Plugins, main Jquery -->
+        <script src="{{asset('front/assets/js/plugins.js')}}"></script>
+        <script src="{{asset('front/assets/js/main.js')}}"></script>
+
+
+{% endblock %}
+
+{% endblock %}
+</body>
+</html>
