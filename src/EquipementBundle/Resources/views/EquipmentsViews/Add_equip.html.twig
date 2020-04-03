@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {% block head %}
+        <link href="{{ asset('back/img/favicon.png') }}" rel="icon">
+        <link href="{{ asset('back/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{ asset('back/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!--external css-->
+        <link href="{{ asset('back/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/css/zabuto_calendar.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/lib/gritter/css/jquery.gritter.css') }}" />
+        <!-- Custom styles for this template -->
+        <link href="{{ asset('back/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('back/css/style-responsive.css') }}" rel="stylesheet">
+
+    {% endblock %}
+
+{% block content %}<center><br><br>
+    <h1 style="color: #006dcc">
+        {% if editMode %}
+            Modifier un Equipement
+        {% else %}
+            Ajouter un Equipement
+        {% endif %}
+    </h1>
+  {{ form_start(form) }}<br><br>
+    <div>
+        <div class="col-sm-4" style="margin-left: 420px">
+            {{form_widget(form.equipmentname)}}
+         <br><br>
+        </div>
+        <div class="col-sm-4" style="margin-left: 420px">
+            {{form_widget(form.rawmaterial)}}<br><br>
+        </div>
+         <div class="col-sm-12" >
+
+                 <button class="btn btn-success "  id="_submit" name="_submit" type="submit" >
+                    {% if editMode %}
+                       Enrgistrer
+                    {% else %}
+                        Ajouter
+                    {% endif %}
+                 </button>
+               </div>
+    </div>
+  {{ form_end(form) }}
+</center>
+{% endblock %}

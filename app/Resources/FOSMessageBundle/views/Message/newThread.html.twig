@@ -1,0 +1,28 @@
+{% extends '@FOSMessage/layout.html.twig' %}
+
+{% block fos_message_content %}
+
+
+
+
+                <div class="col-sm-9">
+                    <section class="panel">
+
+                        <div class="panel-body">
+                            <div class="compose-mail">
+                                <form action="{{ url('fos_message_thread_new') }}" method="post">
+
+                                    {{ form_widget(form) }}
+                                    <input type="submit" />
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+
+
+{% endblock %}
