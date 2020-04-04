@@ -6,7 +6,7 @@ security:
     role_hierarchy:
         ROLE_CLIENT: ROLE_USER
         ROLE_ADMIN: ROLE_ADMIN
-        ROLE_SUPER_ADMIN:   ROLE_ADMIN
+        ROLE_SUPER_ADMIN:   ROLE_SUPER_ADMIN
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
@@ -33,8 +33,12 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, role: IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/home_page, role: ROLE_ADMIN }
         - { path: ^/front_page , role: ROLE_CLIENT }
+        - { path: ^/front_page, role: ROLE_SUPER_ADMIN }
+
+
 
 
 

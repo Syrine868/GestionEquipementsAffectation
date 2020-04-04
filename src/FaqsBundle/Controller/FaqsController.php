@@ -17,5 +17,9 @@ class FaqsController extends Controller
 
     }
 
+    public function backAction(){
+        return $this->render('@Faqs/FaqsViews/backfaqs.html.twig');
+
+    }
 
 }
