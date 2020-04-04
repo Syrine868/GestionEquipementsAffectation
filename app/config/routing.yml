@@ -2,6 +2,7 @@ faqs:
     resource: "@FaqsBundle/Resources/config/routing.yml"
     prefix:   /Faqs
 
+
 equipement:
     resource: "@EquipementBundle/Resources/config/routing.yml"
     prefix:   /Equipement

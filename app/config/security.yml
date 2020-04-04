@@ -4,7 +4,8 @@ security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
     role_hierarchy:
-        ROLE_ADMIN: ROLE_USER
+        ROLE_CLIENT: ROLE_USER
+        ROLE_ADMIN: ROLE_ADMIN
         ROLE_SUPER_ADMIN:   ROLE_ADMIN
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
@@ -18,18 +19,23 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+
         main:
             pattern: ^/
+            user_checker: security.user_checker
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
             logout: true
             anonymous:  true
+
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/home_page, role: ROLE_ADMIN }
+        - { path: ^/front_page , role: ROLE_CLIENT }
+
 
 
       # activate different ways to authenticate

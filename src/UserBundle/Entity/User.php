@@ -36,7 +36,11 @@ class User extends BaseUser implements ParticipantInterface
     public function __construct()
     {
         parent:: __construct();
+        $this->addRole("ROLE_CLIENT");
+
     }
+
+
 
 }
 
