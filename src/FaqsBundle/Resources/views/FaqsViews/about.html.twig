@@ -19,7 +19,9 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
-                                    <img src="{{ asset('front/assets/img/phenix.png') }}" alt="">
+                                    <video class="owl-video-frame" controls>
+                                        <source src="{{ asset('front/assets/img/Média1.mp4') }}" type="video/mp4">
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -29,46 +31,7 @@
         </div>
         <!-- Slider Area End -->
         <!-- Best Features Start -->
-        <section class="best-features-area section-padd4">
-            <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-xl-8 col-lg-10">
-                        <!-- Section Tittle -->
-                        <div class="row">
-                            <div class="col-lg-10 col-md-10">
-                                <div class="section-tittle">
-                                    <h2>Some of the best features Of Our App!</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Section caption -->
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-features mb-70">
-                                    <div class="features-icon">
-                                        <span class="flaticon-support"></span>
-                                    </div>
-                                    <div class="features-caption">
-                                        <h3>Easy to Costomize</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-features mb-70">
-                                    <div class="features-icon">
-                                        <span class="flaticon-support"></span>
-                                    </div>
-                                    <div class="features-caption">
-                                        <h3>Extreme Security</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Shpe -->
-        </section>
+
         <!-- Best Features End -->
         <!-- Services Area Start -->
         <section class="service-area sky-blue section-padding2">
@@ -90,18 +53,7 @@
 
         <!-- Applic App End -->
         <!-- Best Pricing Start -->
-        <section class="best-pricing pricing-padding" data-background="assets/img/gallery/best_pricingbg.jpg">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="section-tittle section-tittle2 text-center">
-                            <h2>Choose Your Very Best Pricing Plan.</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- Best Pricing End -->
         <!-- Pricing Card Start -->
 
@@ -110,19 +62,23 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="offset-xl-1 offset-lg-1 col-xl-5 col-lg-5">
                         <div class="say-something-cap">
-                            <h2>Say Hello To The Collaboration Hub.</h2>
+
+
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3">
                         <div class="say-btn">
-                            <a href="#" class="btn radius-btn">Contact Us</a>
+                            <h6>Add Your Question</h6>
+                            <a href="{{path('ajouter_question_customer')}}" class="btn radius-btn" id="ctn">Contact Us</a>
                         </div>
                     </div>
+
                 </div>
+
             </div>
             <!-- shape -->
             <div class="say-shape">
-                <img src="{{ asset('front/assets/img/shape/say-shape-left.png') }}" alt="" class="say-shape1 rotateme d-none d-xl-block">
+                <img src="{{ asset('front/assets/img/q.jpg') }}" alt="" class="say-shape1 rotateme d-none d-xl-block">
                 <img src="{{ asset('front/assets/img/shape/say-shape-right.png') }}" alt="" class="say-shape2 d-none d-lg-block">
             </div>
         </div>

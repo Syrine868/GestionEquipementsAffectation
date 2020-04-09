@@ -3,7 +3,7 @@
         <title>DEBOO</title>
     {% block head %}
         <link rel="manifest" href="#">
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/img/favicon.ico') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/img/logo/90444111_1095930614125350_4943213800976285696_n.png') }}">
 
         <!-- CSS here -->
         <link rel="stylesheet" href="{{ asset('front/assets/css/bootstrap.min.css') }}">
@@ -54,7 +54,7 @@
                                                         <div class="main-menu f-right d-none d-lg-block">
                                                                 <nav>
                                                                         <ul id="navigation">
-                                                                                <li class="active"><a href="#"> Home</a></li>
+                                                                                <li class=""><a href="{{ path('front_page') }}"> Home</a></li>
                                                                                 <li><a href="{{ path('faqs_page') }}">FAQs</a></li>
                                                                                 <li><a href="{{ path('about_page') }}">About</a></li>
                                                                                 <li><a href="{{ path('fos_user_security_login') }}">Logout</a></li>
@@ -113,8 +113,8 @@
                                                             <div class="footer-tittle">
                                                                     <h4>Quick Links</h4>
                                                                     <ul>
-                                                                            <li><a href="#">About</a></li>
-                                                                            <li><a href="#">FAQ</a></li>
+                                                                            <li><a href="{{ path('about_page') }}">About</a></li>
+                                                                            <li><a href="{{ path('faqs_page') }}">FAQ</a></li>
                                                                     </ul>
                                                             </div>
                                                     </div>

@@ -12,6 +12,29 @@ faqs_page:
 about_page:
     path:     /about
     defaults: { _controller: FaqsBundle:Faqs:about}
-back_page:
-    path:     /back
-    defaults: { _controller: FaqsBundle:Faqs:back}
+
+back_listfaqs:
+    path:     /listback
+    defaults: { _controller: FaqsBundle:BackFaqs:ListFaqsBack}
+
+deleteback_faqs:
+    path:      /delete_faqs/{idReponse}
+    defaults: { _controller: FaqsBundle:BackFaqs:deleteFaqs }
+addFaqs_back:
+    path:      /addFaqBack
+    defaults:  { _controller: FaqsBundle:BackFaqs:AddFaqsBack }
+editFaqs_Back:
+    path:      /editfaqsback/{idReponse}
+    defaults:  { _controller: FaqsBundle:BackFaqs:UpdateFaqs }
+front_listfaqs:
+    path:      /questions
+    defaults: { _controller: FaqsBundle:Faqs:listFront }
+faqs:
+    path:       /customer
+    defaults: { _controller: FaqsBundle:Faqs:questions}
+ajouter_question_customer:
+    path:       /add
+    defaults: { _controller : FaqsBundle:Faqs:AddQuestion}
+list_questions_user:
+    path:       /listQuestions
+    defaults : { _controller : FaqsBundle:Faqs:listQuestion }
