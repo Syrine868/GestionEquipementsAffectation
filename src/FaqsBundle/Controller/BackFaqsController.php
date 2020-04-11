@@ -3,6 +3,7 @@
 namespace FaqsBundle\Controller;
 
 use EquipementBundle\Form\AssignmentType;
+use FaqsBundle\Entity\Question;
 use FaqsBundle\Entity\Reponse;
 use FaqsBundle\Form\ReponseType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,6 +17,12 @@ class BackFaqsController extends Controller
         return $this->render('@Faqs/BackFaqs/backfaqs.html.twig',array('list_faqs'=>$list_faqs));
 
     }
+
+    public function listQuestionsAction(){
+        $list_question=$this->getDoctrine()->getRepository(Question::class)->findAll();
+        return $this->render('@Faqs/BackFaqs/listQuestionsback.html.twig',array('list_questions'=>$list_question));
+    }
+
     public function AddFaqsBackAction(Request $request, Reponse $rep=null){
         if(!$rep){
             $rep = new Reponse();
@@ -30,15 +37,15 @@ class BackFaqsController extends Controller
          }
       return $this->render('@Faqs/BackFaqs/addFaqsback.html.twig', array('formFaqs'=>$formFaqs->createView()));
     }
-    public  function  deleteFaqsAction($idReponse){
-        $re = $this->getDoctrine()->getRepository(Reponse::class)->find($idReponse);
+    public  function  deleteFaqsAction($slug){
+        $re = $this->getDoctrine()->getRepository(Question::class)->find($slug);
         $em= $this->getDoctrine()->getManager();
         $em->remove($re);
         $em->flush();
         return $this->redirectToRoute('back_listfaqs');
     }
-    public function UpdateFaqsAction(Request $request,$idReponse){
-        $finder=$this->getDoctrine()->getRepository(Reponse::class)->find($idReponse);
+    public function UpdateFaqsAction(Request $request,$slug){
+        $finder=$this->getDoctrine()->getRepository(Question::class)->find($slug);
         $form=$this->createForm(ReponseType::class,$finder);
         $form->handleRequest($request);
         if ($form->isSubmitted())
@@ -48,7 +55,7 @@ class BackFaqsController extends Controller
             $em->flush();
             return $this->redirectToRoute('back_listfaqs');
         }
-       return $this->render('@Faqs/BackFaqs/editFaqsback.html.twig',array('form'=>$form->createView(),'idReponse'=>$idReponse));
+       return $this->render('@Faqs/BackFaqs/editFaqsback.html.twig',array('form'=>$form->createView(),'slug'=>$slug));
     }
 
 }

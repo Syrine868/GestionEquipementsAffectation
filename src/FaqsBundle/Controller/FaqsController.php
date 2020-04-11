@@ -5,11 +5,14 @@ namespace FaqsBundle\Controller;
 
 use FaqsBundle\Entity\Question;
 use FaqsBundle\Entity\Reponse;
+use FaqsBundle\Entity\User;
 use FaqsBundle\Form\QuestionType;
-use FaqsBundle\Form\ReponseType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 
 class FaqsController extends Controller
 {
@@ -39,15 +42,16 @@ class FaqsController extends Controller
         return $this->render('@Faqs/FaqsViews/questions.html.twig', array('list_faqs'=>$list_faqs,'pagination'=>$pagination));
     }
 
-    public function AddQuestionAction(Request $request, Reponse $ques=null){
-        if(!$ques){
-            $ques = new Question();
-        }
+    public function AddQuestionAction(Request $request, Question $ques =null  ){
+          $id= $this->getUser();
+          $ques = new Question();
 
+          $getUser= $this->getDoctrine()->getRepository(Question::class)->findBy(array('id'=>$id));
           $formFaqs= $this->createForm(QuestionType::class, $ques);
          $formFaqs->handleRequest($request);
           if ($formFaqs->isSubmitted() && $formFaqs->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $ques->setId($this->getUser());
             $em->persist($ques);
             $em->flush();
             return $this->redirectToRoute('list_questions_user');
@@ -56,7 +60,8 @@ class FaqsController extends Controller
     }
 
     public function listQuestionAction(Request $request){
-        $list_questions= $this->getDoctrine()->getRepository(Question::class)->findAll();
+        $id= $this->getUser();
+        $list_questions= $this->getDoctrine()->getRepository(Question::class)->findBy(array('id'=>$id));
         $paginator = $this->get('knp_paginator');
         $pagination= $paginator->paginate(
             $list_questions,

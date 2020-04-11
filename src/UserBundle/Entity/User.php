@@ -21,7 +21,7 @@ class User extends BaseUser implements ParticipantInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 
 
     /**
@@ -41,6 +41,74 @@ class User extends BaseUser implements ParticipantInterface
     }
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=180, nullable=false)
+     */
+    protected $nom;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=180, nullable=false)
+     */
+    protected $prenom;
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phone", type="integer", nullable=false)
+
+     */
+    protected $phone;
+
+    /**
+     * @return int
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param int $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
 
 }
 

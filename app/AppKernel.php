@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new FOS\MessageBundle\FOSMessageBundle(),
             new FaqsBundle\FaqsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

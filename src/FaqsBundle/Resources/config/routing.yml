@@ -18,14 +18,17 @@ back_listfaqs:
     defaults: { _controller: FaqsBundle:BackFaqs:ListFaqsBack}
 
 deleteback_faqs:
-    path:      /delete_faqs/{idReponse}
+    path:     /{slug}/delete_faqs
     defaults: { _controller: FaqsBundle:BackFaqs:deleteFaqs }
+    methods:  DELETE
 addFaqs_back:
     path:      /addFaqBack
     defaults:  { _controller: FaqsBundle:BackFaqs:AddFaqsBack }
 editFaqs_Back:
-    path:      /editfaqsback/{idReponse}
+    path:      /{slug}/editfaqsback
     defaults:  { _controller: FaqsBundle:BackFaqs:UpdateFaqs }
+
+
 front_listfaqs:
     path:      /questions
     defaults: { _controller: FaqsBundle:Faqs:listFront }
@@ -35,6 +38,10 @@ faqs:
 ajouter_question_customer:
     path:       /add
     defaults: { _controller : FaqsBundle:Faqs:AddQuestion}
+
 list_questions_user:
     path:       /listQuestions
     defaults : { _controller : FaqsBundle:Faqs:listQuestion }
+listquestions_back:
+    path:       /listQuestionsUser
+    defaults:  {_controller: FaqsBundle:BackFaqs:listQuestions }

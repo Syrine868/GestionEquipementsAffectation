@@ -45,32 +45,31 @@
      <br>
     {{ form_start(formAff , {'attr':{'class':'form-horizontal style-form'}} ) }}
          <div class="form-group">
-             <label class="control-label col-md-3"></label>
+             <label class="control-label col-md-3">Select date range</label>
              <div class="col-xs-7 col-md-4 ">
                  <div class="input-group input-large" data-date="01/01/2014" data-date-format="mm/dd/yyyy">
                      {{ form_widget(formAff.datep , {'attr':{'class':'form-control dpd1'}}) }}
                      <span class="input-group-addon">To</span>
                      {{ form_widget(formAff.dater , {'attr':{'class':'form-control dpd2'}}) }}
                  </div>
-                 <span class="help-block">Select date range</span>
              </div>
          </div>
          <div class="form-group">
-             <label class="col-md-3 control-label"></label>
+             <label class="col-md-3 control-label">Etat</label>
              <div class="col-xs-7 col-md-4">
                  {{ form_widget(formAff.state , {'attr':{'class':'form-control round-form'}}) }}
 
              </div>
          </div>
          <div class="form-group">
-             <label class="col-md-3 control-label"></label>
+             <label class="col-md-3 control-label">Employé</label>
              <div class="col-xs-7 col-md-4">
                  {{ form_widget(formAff.employee , {'attr':{'class':'form-control round-form'}}) }}
              </div>
          </div>
 
          <div class="form-group">
-             <label class="col-md-3 control-label"></label>
+             <label class="col-md-3 control-label">Nom Equipement</label>
              <div class="col-xs-7 col-md-4">
                  {{ form_widget(formAff.equipment , {'attr':{'class':'form-control round-form'}}) }}
              </div>

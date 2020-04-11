@@ -2,9 +2,13 @@
 
 namespace FaqsBundle\Form;
 
+use FaqsBundle\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+
 
 class QuestionType extends AbstractType
 {
@@ -13,7 +17,7 @@ class QuestionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('questionarea',null);
+        $builder->add('questionarea',null)->add('headline',null);
     }/**
      * {@inheritdoc}
      */

@@ -4,10 +4,9 @@
 <head>
     {% block head %}
     <title>DEBOO</title>
-        {% block stylesheets %}
     <!-- Favicons -->
     <link href="{{ asset('back/img/90444111_1095930614125350_4943213800976285696_n.png') }}" rel="icon">
-    <link href="{{ asset('back/img/90444111_1095930614125350_4943213800976285696_n.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('back/img/90444111_1095930614125350_4943213800976285696_n.png') }}" rel="icon">
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('back/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -20,7 +19,6 @@
     <link href="{{ asset('back/css/style-responsive.css') }}" rel="stylesheet">
 
 
-        {% endblock %}
     {% endblock %}
 </head>
 
@@ -36,7 +34,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="{{ path('list_equipments') }}" class="logo" ><b>Deb<span>OO</span></b></a>
+        <a href="{{ path('list_equipments') }}" class="logo" ><b style="font-family: Atlane">Deb<span style="font-family: Atlane">OO</span></b></a>
         <!--logo end-->
 
         <div class="top-menu">
@@ -108,7 +106,7 @@
                     </a>
                     <ul class="sub">
                         <li><a href="{{ path('back_listfaqs') }}">FAQs</a></li>
-                        <li><a href="">Questions</a></li>
+                        <li><a href="{{ path('listquestions_back') }}">Questions</a></li>
 
 
 

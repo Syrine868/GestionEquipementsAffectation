@@ -4,7 +4,12 @@
     <main xmlns="http://www.w3.org/1999/html">
         <section data-background="{{ asset('front/assets/img/') }} ">
          <center>   <br><br><br><br><br><br><br><br><br>
+             <div class="dropdown-divider"></div>
+             <div class="card-title">
+                 <h2 style="font-family: 'Berlin Sans FB Demi'">Les Questions</h2>
+             </div>
             <div class="row">
+
 
                 {% for questio in pagination %}
 
@@ -13,13 +18,10 @@
 
                             <div class="card-body ">
                                 <div class="card-deck">
-                                    <img class="card-img-top" style="width: 100px; height: 100px" src="{{asset('back/img/sysy.jpg') }}" alt="">
+                                    <img class="card-img-top "  style="width: 100px; height: 100px ; margin-left: 75px" src="{{asset('back/img/sysy.jpg') }}" alt="">
                                 </div>
 
-                                <div class="dropdown-divider"></div>
-                                <div class="card-title">
-                                    <h4><a href="#">Les Questions</a></h4>
-                                </div>
+
 
                                 <div class="dropdown-divider"></div>
                                 <div class="card-text" >    <p>{{ questio.questionArea }}</p>
