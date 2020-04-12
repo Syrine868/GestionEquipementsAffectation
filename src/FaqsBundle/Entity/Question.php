@@ -2,7 +2,6 @@
 
 namespace FaqsBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Mgilet\NotificationBundle\NotifiableInterface;
 use Mgilet\NotificationBundle\Annotation\Notifiable;
@@ -14,7 +13,6 @@ use Mgilet\NotificationBundle\Annotation\Notifiable;
  * @ORM\Table(name="question", indexes={@ORM\Index(name="id", columns={"id"})})
  * @ORM\Entity
  *  @Notifiable(name="question")
-
  */
 class Question implements NotifiableInterface
 {

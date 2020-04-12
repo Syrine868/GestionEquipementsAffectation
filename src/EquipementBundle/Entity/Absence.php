@@ -36,7 +36,55 @@ class Absence
      *   @ORM\JoinColumn(name="idEmp", referencedColumnName="idEmp")
      * })
      */
-    private $idemp;
+    private $employee;
+
+    /**
+     * @return int
+     */
+    public function getIdabsence()
+    {
+        return $this->idabsence;
+    }
+
+    /**
+     * @param int $idabsence
+     */
+    public function setIdabsence($idabsence)
+    {
+        $this->idabsence = $idabsence;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return \Employee
+     */
+    public function getEmployee()
+    {
+        return $this->employee;
+    }
+
+    /**
+     * @param \Employee $employee
+     */
+    public function setEmployee($employee)
+    {
+        $this->employee = $employee;
+    }
 
 
 }

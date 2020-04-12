@@ -41,9 +41,9 @@
                                                         <td>{{ rep.question.questionArea }}</td>
                                                         <td>{{ rep.repQuestion }}</td>
                                                     <td>
-                                                        <a href="{{ path('editFaqs_Back',{'slug': rep.question.slug } ) }}"><button class="btn btn-round btn-theme02 btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                        <a href="{{ path('editFaqs_Back',{'idReponse': rep.idReponse } ) }}"><button class="btn btn-round btn-theme02 btn-xs"><i class="fa fa-pencil"></i></button></a>
                                                     </td>
-                                                      <td>  <a href="{{ path('deleteback_faqs',{ 'slug': rep.question.slug } ) }}"><button class="btn btn-danger btn-round btn-xs" ><i class="fa fa-trash-o " ></i></button></a>
+                                                      <td>  <a href="{{ path('delete_reponse',{ 'idReponse': rep.idReponse } ) }}"><button class="btn btn-danger btn-round btn-xs" ><i class="fa fa-trash-o " ></i></button></a>
                                                     </td>
 
 

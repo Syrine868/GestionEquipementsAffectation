@@ -2,7 +2,6 @@
 
 namespace FaqsBundle\Controller;
 
-use EquipementBundle\Form\AssignmentType;
 use FaqsBundle\Entity\Question;
 use FaqsBundle\Entity\Reponse;
 use FaqsBundle\Form\ReponseType;
@@ -38,16 +37,23 @@ class BackFaqsController extends Controller
       return $this->render('@Faqs/BackFaqs/addFaqsback.html.twig', array('formFaqs'=>$formFaqs->createView()));
     }
     public  function  deleteFaqsAction($slug){
-        $re = $this->getDoctrine()->getRepository(Question::class)->find($slug);
+        $re = $this->getDoctrine()->getRepository(Question::class)->findOneBy(array('slug'=>$slug));
         $em= $this->getDoctrine()->getManager();
         $em->remove($re);
         $em->flush();
         return $this->redirectToRoute('back_listfaqs');
     }
-    public function UpdateFaqsAction(Request $request,$slug){
-        $finder=$this->getDoctrine()->getRepository(Question::class)->find($slug);
+    public  function  deleteQuestionAction($idReponse){
+        $reponseee = $this->getDoctrine()->getRepository(Reponse::class)->find($idReponse);
+        $em= $this->getDoctrine()->getManager();
+        $em->remove($reponseee);
+        $em->flush();
+        return $this->redirectToRoute('back_listfaqs');
+    }
+    public function UpdateFaqsAction(Request $request,$idReponse){
+        $finder=$this->getDoctrine()->getRepository(Reponse::class)->find($idReponse);
         $form=$this->createForm(ReponseType::class,$finder);
-        $form->handleRequest($request);
+       $form->handleRequest($request);
         if ($form->isSubmitted())
         {
             $em=$this->getDoctrine()->getManager();
@@ -55,7 +61,7 @@ class BackFaqsController extends Controller
             $em->flush();
             return $this->redirectToRoute('back_listfaqs');
         }
-       return $this->render('@Faqs/BackFaqs/editFaqsback.html.twig',array('form'=>$form->createView(),'slug'=>$slug));
+       return $this->render('@Faqs/BackFaqs/editFaqsback.html.twig',array('form'=>$form->createView(),'idReponse'=>$idReponse));
     }
 
 }
